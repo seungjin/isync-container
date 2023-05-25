@@ -1,0 +1,11 @@
+version: "3.7"
+
+services:
+  mbsync:
+    image: ghcr.io/seungjin/isync-container
+    volumes: 
+      - $HOME/.mail:/home/seungjin/.mail:rw,Z
+      - $HOME/.home.d/.mbsyncrc:/home/seungjin/.mbsyncrc:ro
+      - $HOME/.mutt/mutt.d/.secrets:/home/seungjin/.mutt/mutt.d/.secrets:ro
+    uts: "host"
+    userns_mode: "keep-id"

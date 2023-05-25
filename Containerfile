@@ -6,4 +6,5 @@ USER seungjin
 
 WORKDIR /home/seungjin
 
-CMD mbsync -a
+ENTRYPOINT ["mbsync"]
+CMD ["-a"]
